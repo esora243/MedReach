@@ -373,7 +373,7 @@
         <!-- 記事・情報履歴セクション -->
         <section id="article-history" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">記事アーカイブ：2019年からの医療トレンドを深掘り</h2>
-            <img src="画像(2).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(2).jpg">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 2019年より毎月3本、医療界の重要な動きを捉えた記事を公開しています。各年の主要テーマと記事概要で、最新トレンドを効率的にキャッチしてください。
             </p>
