@@ -373,7 +373,7 @@
         <!-- 記事・情報履歴セクション -->
         <section id="article-history" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">記事アーカイブ：2019年からの医療トレンドを深掘り</h2>
-            <img src="https://placehold.co/900x300/14b8a6/ffffff?text=画像(2).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(2).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 2019年より毎月3本、医療界の重要な動きを捉えた記事を公開しています。各年の主要テーマと記事概要で、最新トレンドを効率的にキャッチしてください。
             </p>
@@ -385,7 +385,7 @@
         <!-- 求人情報セクション -->
         <section id="job-postings" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">求人情報：あなたの専門性を活かす次なるステージへ</h2>
-            <img src="https://placehold.co/900x300/1e3a8a/ffffff?text=画像(6).jpg" alt="[求職活動のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(6).jpg" alt="[求職活動のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 専門分野や働き方のニーズに応える、医師向けの厳選求人情報です。ビズリーチやマイナビドクターのような質の高い情報提供を目指し、先生方の理想の職場探しをドクターリーチがサポートします。
             </p>
@@ -400,7 +400,7 @@
                         <li>年収: 1,500万円〜2,500万円</li>
                         <li>待遇: 住宅手当、学会参加費補助、週休2日制</li>
                     </ul>
-                    <img src="https://placehold.co/350x200/1e3a8a/ffffff?text=画像(7).jpg" alt="[都内総合病院のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(7).jpg" alt="[都内総合病院のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://doctor.mynavi.jp/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
