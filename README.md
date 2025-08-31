@@ -44,7 +44,40 @@
         .header-bg {
             background-image: linear-gradient(to right, var(--header-gradient-start), var(--header-gradient-end));
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow for header */
+            position: relative; /* For the watermark */
         }
+        .header-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('画像 (1).jpg');
+            background-size: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1; /* Subtle watermark effect */
+        }
+        .footer-bg {
+            background-color: #1f2937;
+            box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative; /* For the watermark */
+        }
+        .footer-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('画像 (2).jpg');
+            background-size: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1; /* Subtle watermark effect */
+        }
+
         .nav-link {
             transition: all 0.3s ease-in-out;
             position: relative;
@@ -316,7 +349,7 @@
 </head>
 <body class="antialiased">
     <div class="header-bg text-white py-6 md:py-8 shadow-lg">
-        <div class="container flex flex-col md:flex-row items-center justify-between">
+        <div class="container flex flex-col md:flex-row items-center justify-between relative z-10">
             <h1 class="text-3xl md:text-4xl font-extrabold mb-4 md:mb-0">ドクターリーチ</h1>
             <nav>
                 <ul class="flex flex-wrap justify-center space-x-4 md:space-x-8 text-lg md:text-xl font-semibold">
@@ -355,7 +388,7 @@
         <!-- ホームセクション -->
         <section id="home" class="content-section active mb-12 md:mb-16 bg-white p-8 rounded-xl shadow-lg text-center">
             <h2 class="section-title">ドクターリーチ：医師の知的好奇心とキャリアの次なる一歩を繋ぐ</h2>
-            <img src="画像 (1).jpg" alt="[医療研究のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像 (3).jpg" alt="[医療研究のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-xl text-dark-gray-text max-w-3xl mx-auto leading-relaxed mb-6">
                 先生方の「知りたい」に真摯に寄り添い、日々の診療に役立つ専門記事、キャリアの選択肢を広げる求人・譲渡情報、そして国の重要な公式発表まで、必要な情報を迷いなく手に入れられるよう、本プラットフォームは設計されております。
             </p>
@@ -373,7 +406,7 @@
         <!-- 記事・情報履歴セクション -->
         <section id="article-history" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">記事アーカイブ：2019年からの医療トレンドを深掘り</h2>
-            <img src="画像 (2).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像 (4).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 2019年より毎月3本、医療界の重要な動きを捉えた記事を公開しています。各年の主要テーマと記事概要で、最新トレンドを効率的にキャッチしてください。
             </p>
@@ -385,7 +418,7 @@
         <!-- 求人情報セクション -->
         <section id="job-postings" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">求人情報：あなたの専門性を活かす次なるステージへ</h2>
-            <img src="画像 (6).jpg" alt="[求職活動のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像 (5).jpg" alt="[求職活動のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 専門分野や働き方のニーズに応える、医師向けの厳選求人情報です。ビズリーチやマイナビドクターのような質の高い情報提供を目指し、先生方の理想の職場探しをドクターリーチがサポートします。
             </p>
@@ -400,7 +433,7 @@
                         <li>年収: 1,500万円〜2,500万円</li>
                         <li>待遇: 住宅手当、学会参加費補助、週休2日制</li>
                     </ul>
-                    <img src="画像 (7).jpg" alt="[都内総合病院のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (6).jpg" alt="[都内総合病院のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://doctor.mynavi.jp/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -416,7 +449,7 @@
                         <li>年収: 1,800万円〜3,000万円</li>
                         <li>待遇: 車通勤可、退職金制度あり、開業支援制度</li>
                     </ul>
-                    <img src="画像 (8).jpg" alt="[地方クリニックのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (7).jpg" alt="[地方クリニックのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.bizreach.jp/career-change/medical/doctor/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -432,7 +465,7 @@
                         <li>年収: 1,200万円〜1,800万円</li>
                         <li>待遇: 完全週休二日制、福利厚生充実、研修制度</li>
                     </ul>
-                    <img src="画像 (9).jpg" alt="[大手企業のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (8).jpg" alt="[大手企業のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.dr-summit.jp/column/industrial_physician/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -448,7 +481,7 @@
                         <li>時給: 10,000円〜15,000円</li>
                         <li>待遇: 交通費支給、扶養内勤務応相談、午前のみ勤務可</li>
                     </ul>
-                    <img src="画像 (10).jpg" alt="[健診センターのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (9).jpg" alt="[健診センターのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.m3.com/doctor/job/parttime/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -466,7 +499,7 @@
         <!-- クリニック譲渡情報セクション -->
         <section id="clinic-transfer" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">クリニック譲渡：理想の医療を叶える、新たな開業の選択肢</h2>
-            <img src="画像 (11).jpg" alt="[クリニック譲渡のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像 (10).jpg" alt="[クリニック譲渡のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 開業を検討中の先生方、新たな挑戦をお考えの方へ。質の高いクリニック譲渡案件を厳選し、スムーズな事業承継を支援します。
             </p>
@@ -482,7 +515,7 @@
                         <li>譲渡価格: 5,000万円</li>
                         <li>特記事項: 既存患者基盤あり、スタッフ引き継ぎ可</li>
                     </ul>
-                    <img src="画像 (12).jpg" alt="[世田谷区のクリニック外観]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (11).jpg" alt="[世田谷区のクリニック外観]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.medius.co.jp/transfer/clinic/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -499,7 +532,7 @@
                         <li>譲渡価格: 7,500万円</li>
                         <li>特記事項: 最新のレーザー治療器導入済、駅直結</li>
                     </ul>
-                    <img src="画像 (13).jpg" alt="[吹田市の眼科クリニック]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (12).jpg" alt="[吹田市の眼科クリニック]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.japan-med.co.jp/clinic-transfer/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -516,7 +549,7 @@
                         <li>譲渡価格: 9,000万円</li>
                         <li>特記事項: 美容機器一式、集客ノウハウ提供、駅近</li>
                     </ul>
-                    <img src="画像 (14).jpg" alt="[名古屋市の美容皮膚科]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (13).jpg" alt="[名古屋市の美容皮膚科]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.iryokai.co.jp/consulting/transfer/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -533,7 +566,7 @@
                         <li>譲渡価格: 6,000万円</li>
                         <li>特記事項: 理学療法士常勤、駐車場完備</li>
                     </ul>
-                    <img src="画像 (15).jpg" alt="[福岡市の整形外科]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (14).jpg" alt="[福岡市の整形外科]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.dr-summit.jp/column/clinic_transfer/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -551,7 +584,7 @@
         <!-- ブログセクション -->
         <section id="blog" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">ドクターズブログ：現場の知見と未来への提言</h2>
-            <img src="画像 (16).jpg" alt="[医療ブログのイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像 (15).jpg" alt="[医療ブログのイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 現役医師や医療専門家が執筆するコラム・解説記事です。日々の診療のヒントからキャリア、最新医療トレンドまで、多岐にわたるテーマを深く掘り下げます。
             </p>
@@ -561,7 +594,7 @@
                     <p class="text-medium-gray-text mb-4 text-sm">
                         臨床以外の選択肢も豊富です。研究、公衆衛生、産業医、そして起業。あなたの可能性を広げる多様なキャリアパスを解説します。
                     </p>
-                    <img src="画像 (17).jpg" alt="[多様なキャリアパスのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (16).jpg" alt="[多様なキャリアパスのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="#" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         続きを読む
@@ -572,7 +605,7 @@
                     <p class="text-medium-gray-text mb-4 text-sm">
                         診断支援から新薬開発まで、急速に進化するAI医療。その可能性と課題、医師に求められる役割について深く考察します。
                     </p>
-                    <img src="画像 (18).jpg" alt="[AI医療のイラスト]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (17).jpg" alt="[AI医療のイラスト]" class="w-full h-auto rounded-lg mb-4">
                     <a href="#" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         続きを読む
@@ -583,7 +616,7 @@
                     <p class="text-medium-gray-text mb-4 text-sm">
                         多忙な医療現場で働く医師のメンタルヘルスは非常に重要です。ストレス管理、リフレッシュ法、専門機関の活用についてご紹介します。
                     </p>
-                    <img src="画像 (19).jpg" alt="[メンタルヘルスケアのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (18).jpg" alt="[メンタルヘルスケアのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="#" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         続きを読む
@@ -594,7 +627,7 @@
                     <p class="text-medium-gray-text mb-4 text-sm">
                         過疎地域での医療提供は多くの困難を伴いますが、その中で見つけるやりがいや、地域住民との深い繋がりについて探ります。
                     </p>
-                    <img src="画像 (20).jpg" alt="[地域医療の様子]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (19).jpg" alt="[地域医療の様子]" class="w-full h-auto rounded-lg mb-4">
                     <a href="#" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         続きを読む
@@ -619,7 +652,7 @@
                 <!-- カテゴリ1: 医師資格・免許・研修 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M22 10v6M2 10l10-5 10 5M2 10v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"/><path d="M6 10v6"/><path d="M18 10v6"/><path d="M12 2v3"/></svg>医師資格・免許・研修</h3>
-                    <img src="画像 (21).jpg" alt="[医師免許のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (20).jpg" alt="[医師免許のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>医師免許の取得・更新手続き、専門医制度、各種研修制度など、医師としてのキャリア形成に欠かせない情報です。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/ishimensetsu/index.html" target="_blank">医師免許関係情報</a></li>
@@ -630,7 +663,7 @@
                 <!-- カテゴリ2: 医療法規・倫理・安全 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale"><path d="m16 16 3-3V9l-3 3"/><path d="M21 16V9l-3 3"/><path d="M21 16H9a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h5"/><path d="M16 16H4a2 2 0 0 1-2-2V3a1 1 0 0 1 1-1h12a2 2 0 0 1 2 2v10"/></svg>医療法規・倫理・安全</h3>
-                    <img src="画像 (22).jpg" alt="[医療法規に関する文書のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (21).jpg" alt="[医療法規に関する文書のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>医療法、医師法、医療安全、医療倫理に関する最新の法令やガイドラインなど、診療の遵守事項を確認できます。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/hourei/index.html" target="_blank">医療法関係通知</a></li>
@@ -641,7 +674,7 @@
                 <!-- カテゴリ3: 診療報酬・医療制度 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-yen"><path d="M12 1v22"/><path d="M17 7H7M17 17H7"/></svg>診療報酬・医療制度</h3>
-                    <img src="画像 (23).jpg" alt="[診療報酬に関するグラフのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (22).jpg" alt="[診療報酬に関するグラフのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>診療報酬改定情報、保険制度、地域医療構想など、医療経営や国の医療政策に関わる重要な情報をご確認いただけます。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html" target="_blank">診療報酬改定について</a></li>
@@ -652,7 +685,7 @@
                 <!-- カテゴリ4: 感染症対策・公衆衛生 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-virus"><path d="M10 2c.5 0 1 .5 1 1v2"/><path d="M14 2c-.5 0-1 .5-1 1v2"/><path d="M15 13v-2c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v2"/><path d="M12 9v6"/><path d="M16 15v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2"/><path d="M11 22c.5 0 1-.5 1-1v-2"/><path d="M13 22c-.5 0-1-.5-1-1v-2"/><path d="M22 12h-2c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h2"/><path d="M20 16c0 1.1.9 2 2 2h2"/><path d="M2 12h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H2"/><path d="M4 8c0-1.1-.9-2-2-2H0"/></svg>感染症対策・公衆衛生</h3>
-                    <img src="画像 (24).jpg" alt="[感染症対策のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (23).jpg" alt="[感染症対策のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>新型コロナウイルス感染症をはじめとする各種感染症の情報、予防接種、公衆衛生関連の最新動向を把握できます。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou04/index.html" target="_blank">感染症情報全般</a></li>
@@ -663,7 +696,7 @@
                 <!-- カテゴリ5: 働き方改革・労働環境 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-cog"><circle cx="12" cy="7" r="4"/><path d="M12 15v2"/><path d="M16 19h-8"/><path d="M17.6 17.6a2 2 0 0 0-2.8 0l-1.4 1.4a2 2 0 0 0 0 2.8l1.4 1.4a2 2 0 0 0 2.8 0l1.4-1.4a2 2 0 0 0 0-2.8z"/><path d="M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>働き方改革・労働環境</h3>
-                    <img src="画像 (25).jpg" alt="[ワークライフバランスのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像 (24).jpg" alt="[ワークライフバランスのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>医師の労働時間短縮、タスクシフト、女性医師支援など、より良い労働環境を実現するための国の取り組みをご紹介します。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/ishihou/index.html" target="_blank">医師の働き方改革</a></li>
@@ -675,8 +708,8 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white py-8 md:py-10 mt-16 shadow-inner">
-        <div class="container text-center text-sm">
+    <footer class="footer-bg text-white py-8 md:py-10 mt-16">
+        <div class="container text-center text-sm relative z-10">
             <p>&copy; 2023 ドクターリーチ. All rights reserved.</p>
             <p class="mt-2 text-gray-400">医師の専門性とキャリアを力強くサポートするプラットフォーム</p>
             <div class="mt-6 flex justify-center space-x-6 text-gray-300">
