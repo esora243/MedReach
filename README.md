@@ -20,7 +20,7 @@
             --header-gradient-start: #1d4ed8; /* ヘッダーグラデーションの開始色 */
             --header-gradient-end: #3b82f6; /* ヘッダーグラデーションの終了色 */
             --button-gradient-start: #3b82f6; /* ボタングラデーションの開始色 */
-            --button-gradient-end: #1e3a8a; /* ボタングラデーションの終了色 */
+            --button-gradient-end: #1e3a8a; /* デープブルー for button end */
             --underline-gradient-start: #6ee7b7; /* 下線グラデーションの開始色 */
             --underline-gradient-end: var(--accent-teal); /* 下線グラデーションの終了色 */
         }
@@ -540,9 +540,9 @@
                         <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         ホーム
                     </a></li>
-                    <li><a href="#article-history" class="nav-link">
-                        <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v6h6"/><path d="M10 12H8"/><path d="M16 16H8"/><path d="M16 12H12"/></svg>
-                        記事アーカイブ
+                    <li><a href="#blog" class="nav-link">
+                        <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M16 16h-2"/></svg>
+                        ドクターズブログ
                     </a></li>
                     <li><a href="#job-postings" class="nav-link">
                         <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
@@ -551,10 +551,6 @@
                     <li><a href="#clinic-transfer" class="nav-link">
                         <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hospital"><path d="M12 6V2H2v10a4 4 0 0 0 4 4h10v6h4V6Z"/><path d="M12 18h.01"/><path d="M12 12h.01"/></svg>
                         クリニック譲渡
-                    </a></li>
-                    <li><a href="#blog" class="nav-link">
-                        <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M16 16h-2"/></svg>
-                        ドクターズブログ
                     </a></li>
                     <li><a href="#company-info" class="nav-link">
                         <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2"><path d="M6 8a6 6 0 0 1 6-6v7H6v11"/><path d="M22 2v11a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V2"/><path d="M16 21v-4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4"/></svg>
@@ -584,21 +580,20 @@
                 2019年以来、毎月3本の厳選記事で、先生方の専門知識とキャリアを力強く後押ししています。
             </p>
             <div class="text-center mt-10">
-                <a href="#article-history" class="button-primary page-link">
+                <a href="#blog" class="button-primary page-link">
                     <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     最新記事を見る
                 </a>
             </div>
         </section>
 
-        <!-- 記事アーカイブセクション -->
-        <section id="article-history" class="content-section mb-12 md:mb-16">
-            <h2 class="section-title">記事アーカイブ：2019年からの医療トレンドを深掘り</h2>
-            <img src="画像 (4).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+        <!-- ドクターズブログセクション -->
+        <section id="blog" class="content-section mb-12 md:mb-16">
+            <h2 class="section-title">ドクターズブログ：現場の知見と未来への提言</h2>
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
-                2019年より毎月3本、医療界の重要な動きを捉えた記事を公開しています。各年の主要テーマと記事概要で、最新トレンドを効率的にキャッチしてください。
+                現役医師や医療専門家が執筆するコラム・解説記事です。日々の診療のヒントからキャリア、最新医療トレンドまで、多岐にわたるテーマを深く掘り下げます。
             </p>
-            <div id="articleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="blogGrid" class="space-y-8">
                 <!-- 記事はJavaScriptによって動的にここにロードされます -->
             </div>
         </section>
@@ -610,13 +605,14 @@
                     <h3 id="modalTitle" class="text-2xl font-bold text-primary-blue">記事タイトル</h3>
                     <button id="closeArticleModalBtn" class="text-gray-500 hover:text-gray-900 text-3xl">&times;</button>
                 </div>
-                <p id="modalSummary" class="text-base text-dark-gray-text leading-relaxed"></p>
+                <img id="modalImage" src="" alt="[記事画像]" class="w-full h-auto rounded-lg mb-4 hidden">
+                <p id="modalBody" class="text-base text-dark-gray-text leading-relaxed"></p>
                 <div class="mt-8 flex justify-end">
                     <button id="closeArticleModalBtnBottom" class="admin-button delete">閉じる</button>
                 </div>
             </div>
         </div>
-
+        
         <!-- 求人情報セクション -->
         <section id="job-postings" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">求人情報：あなたの専門性を活かす次なるステージへ</h2>
@@ -783,67 +779,6 @@
             </div>
         </section>
 
-        <!-- ドクターズブログセクション -->
-        <section id="blog" class="content-section mb-12 md:mb-16">
-            <h2 class="section-title">ドクターズブログ：現場の知見と未来への提言</h2>
-            <img src="画像 (15).jpg" alt="[医療ブログのイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
-            <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
-                現役医師や医療専門家が執筆するコラム・解説記事です。日々の診療のヒントからキャリア、最新医療トレンドまで、多岐にわたるテーマを深く掘り下げます。
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray-text">医師のキャリアパス多様化：開業医から産業医まで</h3>
-                    <p class="text-medium-gray-text mb-4 text-sm">
-                        臨床以外の選択肢も豊富です。研究、公衆衛生、産業医、そして起業。あなたの可能性を広げる多様なキャリアパスを解説します。
-                    </p>
-                    <img src="画像 (16).jpg" alt="[多様なキャリアパスのイメージ]" class="w-full h-auto rounded-lg mb-4">
-                    <a href="#" class="button-primary inline-block text-center">
-                        <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        続きを読む
-                    </a>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray-text">AI医療の現状と未来：医師が知っておくべきこと</h3>
-                    <p class="text-medium-gray-text mb-4 text-sm">
-                        診断支援から新薬開発まで、急速に進化するAI医療。その可能性と課題、医師に求められる役割について深く考察します。
-                    </p>
-                    <img src="画像 (17).jpg" alt="[AI医療のイラスト]" class="w-full h-auto rounded-lg mb-4">
-                    <a href="#" class="button-primary inline-block text-center">
-                        <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        続きを読む
-                    </a>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray-text">ストレス社会を生き抜く：医師のためのメンタルヘルス術</h3>
-                    <p class="text-medium-gray-text mb-4 text-sm">
-                        多忙な医療現場で働く医師のメンタルヘルスは非常に重要です。ストレス管理、リフレッシュ法、専門機関の活用についてご紹介します。
-                    </p>
-                    <img src="画像 (18).jpg" alt="[メンタルヘルスケアのイメージ]" class="w-full h-auto rounded-lg mb-4">
-                    <a href="#" class="button-primary inline-block text-center">
-                        <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        続きを読む
-                    </a>
-                </div>
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray-text">地域医療の最前線：医師のやりがいと挑戦</h3>
-                    <p class="text-medium-gray-text mb-4 text-sm">
-                        過疎地域での医療提供は多くの困難を伴いますが、その中で見つけるやりがいや、地域住民との深い繋がりについて探ります。
-                    </p>
-                    <img src="画像 (19).jpg" alt="[地域医療の様子]" class="w-full h-auto rounded-lg mb-4">
-                    <a href="#" class="button-primary inline-block text-center">
-                        <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        続きを読む
-                    </a>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="https://www.medley.life/news/" target="_blank" class="button-primary">
-                    <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                    さらに多くのブログ記事を見る
-                </a>
-            </div>
-        </section>
-
         <!-- 企業情報セクション -->
         <section id="company-info" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">企業情報：クレアメディカル株式会社</h2>
@@ -997,7 +932,7 @@
                     <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">求人情報について</button>
                     <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">クリニック譲渡について</button>
                     <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">企業情報について</button>
-                    <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">記事・情報について</button>
+                    <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">ブログ記事について</button>
                     <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">パスワードを忘れた</button>
                 </div>
             </div>
@@ -1034,7 +969,11 @@
                 <h4 class="text-xl font-semibold text-dark-gray-text mb-4">新規記事の追加</h4>
                 <input type="text" id="newArticleTitle" class="admin-input" placeholder="記事タイトル">
                 <textarea id="newArticleSummary" class="admin-input h-24 resize-y" placeholder="記事概要"></textarea>
-                <button id="addArticleBtn" class="admin-button">記事を追加</button>
+                <div class="mt-4">
+                    <label for="newArticleImage" class="block text-dark-gray-text font-semibold mb-2">画像ファイル名 (例: 画像 (1).jpg)</label>
+                    <input type="text" id="newArticleImage" class="admin-input" placeholder="画像ファイル名">
+                </div>
+                <button id="addArticleBtn" class="admin-button mt-4">記事を追加</button>
             </div>
 
             <!-- 既存記事リスト -->
@@ -1126,29 +1065,31 @@
             });
         }
 
-        async function addArticle(title, summary) {
+        async function addArticle(title, summary, image) {
             if (!db || !isAdmin) return;
             try {
                 await addDoc(collection(db, ARTICLES_COLLECTION_PATH), {
                     title,
                     summary,
+                    image,
                     timestamp: serverTimestamp(),
                     year: new Date().getFullYear(),
                     month: new Date().getMonth()
                 });
                 document.getElementById('newArticleTitle').value = '';
                 document.getElementById('newArticleSummary').value = '';
+                document.getElementById('newArticleImage').value = '';
                 console.log("記事が正常に追加されました。");
             } catch (error) {
                 console.error("記事の追加エラー:", error);
             }
         }
 
-        async function updateArticle(id, title, summary) {
+        async function updateArticle(id, title, summary, image) {
             if (!db || !isAdmin) return;
             try {
                 const articleRef = doc(db, ARTICLES_COLLECTION_PATH, id);
-                await updateDoc(articleRef, { title, summary });
+                await updateDoc(articleRef, { title, summary, image });
                 console.log("記事が正常に更新されました。");
             } catch (error) {
                 console.error("記事の更新エラー:", error);
@@ -1168,14 +1109,13 @@
 
         // --- UIレンダリング関数 ---
         function renderArticles() {
-            const articleGrid = document.getElementById('articleGrid');
-            if (!articleGrid) {
-                console.error('articleGrid要素が見つかりません。');
+            const blogGrid = document.getElementById('blogGrid');
+            if (!blogGrid) {
+                console.error('blogGrid要素が見つかりません。');
                 return;
             }
-
-            let articleContent = '';
-            let imageCounter = 5;
+        
+            blogGrid.innerHTML = ''; // コンテンツをクリア
 
             const articlesByYearMonth = {};
             currentArticles.forEach(article => {
@@ -1189,36 +1129,64 @@
             const sortedYears = Object.keys(articlesByYearMonth).sort((a, b) => b - a);
 
             sortedYears.forEach(year => {
+                const yearBlock = document.createElement('div');
+                yearBlock.className = 'bg-white rounded-xl shadow-lg p-6 mb-8';
+                
+                const yearHeader = document.createElement('h3');
+                yearHeader.className = 'text-2xl font-bold text-primary-blue cursor-pointer flex items-center gap-2 mb-4';
+                yearHeader.innerHTML = `<svg class="icon-medium transform transition-transform duration-300 -rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg><span>${year}年</span>`;
+                yearBlock.appendChild(yearHeader);
+                
+                const monthsContainer = document.createElement('div');
+                monthsContainer.className = 'months-container space-y-4';
+                
                 const sortedMonths = Object.keys(articlesByYearMonth[year]).sort((a, b) => b - a);
                 sortedMonths.forEach(month => {
-                    const monthNames = [
-                        "1月", "2月", "3月", "4月", "5月", "6月",
-                        "7月", "8月", "9月", "10月", "11月", "12月"
-                    ];
-                    const monthName = monthNames[month];
-                    const articlesForMonth = articlesByYearMonth[year][month];
+                    const monthBlock = document.createElement('div');
+                    monthBlock.className = 'bg-gray-50 rounded-lg shadow-sm p-4';
+                    
+                    const monthHeader = document.createElement('h4');
+                    monthHeader.className = 'text-xl font-semibold text-secondary-blue cursor-pointer flex items-center gap-2 mb-4';
+                    monthHeader.innerHTML = `<svg class="icon-small transform transition-transform duration-300 -rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg><span>${parseInt(month) + 1}月</span>`;
+                    monthBlock.appendChild(monthHeader);
+                    
+                    const articlesContainer = document.createElement('div');
+                    articlesContainer.className = 'articles-container space-y-4';
 
-                    const displayArticles = articlesForMonth.slice(0, 3);
+                    articlesByYearMonth[year][month].forEach(article => {
+                        const articleElement = document.createElement('div');
+                        articleElement.className = 'card p-6';
+                        articleElement.innerHTML = `
+                            <h3 class="text-xl font-semibold mb-3 text-dark-gray-text">${article.title}</h3>
+                            <p class="text-medium-gray-text mb-4 text-sm">${article.summary}</p>
+                            ${article.image ? `<img src="${article.image}" alt="[ブログ記事のイメージ]" class="w-full h-auto rounded-lg mb-4">` : ''}
+                            <a href="#" class="button-primary inline-block text-center read-more-link" data-title="${article.title}" data-summary="${article.summary}">
+                                <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                続きを読む
+                            </a>
+                        `;
+                        articlesContainer.appendChild(articleElement);
+                    });
+                    
+                    monthBlock.appendChild(articlesContainer);
+                    monthsContainer.appendChild(monthBlock);
 
-                    articleContent += `
-                        <div class="card p-6">
-                            <h3 class="text-xl font-semibold mb-4 text-primary-blue">${year}年 ${monthName}</h3>
-                            <img src="画像 (${imageCounter}).jpg" alt="[医療トレンドのイメージ]" class="w-full h-auto rounded-lg mb-4">
-                            <ul class="space-y-4">
-                                ${displayArticles.map(article => `
-                                    <li class="article-item">
-                                        <a href="#" class="read-more-link text-dark-gray-text hover:text-secondary-blue font-bold" data-title="${article.title}" data-summary="${article.summary}">${article.title}</a>
-                                        <p class="article-summary">${article.summary}</p>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    `;
-                    imageCounter = (imageCounter % 20) + 1; // 20枚の画像をループ
-                    if (imageCounter === 21) imageCounter = 22; // 画像(21)をスキップ
+                    monthHeader.addEventListener('click', () => {
+                        const icon = monthHeader.querySelector('svg');
+                        articlesContainer.classList.toggle('hidden');
+                        icon.classList.toggle('-rotate-90');
+                    });
+                });
+                
+                yearBlock.appendChild(monthsContainer);
+                blogGrid.appendChild(yearBlock);
+
+                yearHeader.addEventListener('click', () => {
+                    const icon = yearHeader.querySelector('svg');
+                    monthsContainer.classList.toggle('hidden');
+                    icon.classList.toggle('-rotate-90');
                 });
             });
-            articleGrid.innerHTML = articleContent;
         }
 
         // --- 管理者パネルUI ---
@@ -1243,6 +1211,8 @@
                     <div class="edit-form hidden mt-4">
                         <input type="text" class="edit-title-input admin-input" value="${article.title}">
                         <textarea class="edit-summary-input admin-input h-20 resize-y">${article.summary}</textarea>
+                        <label for="editArticleImage-${article.id}" class="block text-dark-gray-text font-semibold mb-2 mt-4">画像ファイル名</label>
+                        <input type="text" id="editArticleImage-${article.id}" class="edit-image-input admin-input" value="${article.image || ''}">
                         <button data-id="${article.id}" class="save-edit-btn admin-button mr-2">保存</button>
                         <button class="cancel-edit-btn admin-button delete">キャンセル</button>
                     </div>
@@ -1272,7 +1242,8 @@
                     const parent = e.target.closest('.p-4');
                     const newTitle = parent.querySelector('.edit-title-input').value;
                     const newSummary = parent.querySelector('.edit-summary-input').value;
-                    updateArticle(id, newTitle, newSummary);
+                    const newImage = parent.querySelector('.edit-image-input').value;
+                    updateArticle(id, newTitle, newSummary, newImage);
                     parent.querySelector('.edit-form').classList.add('hidden');
                     parent.querySelector('.edit-article-btn').classList.remove('hidden');
                 });
@@ -1338,8 +1309,9 @@
         addArticleBtn.addEventListener('click', () => {
             const title = document.getElementById('newArticleTitle').value;
             const summary = document.getElementById('newArticleSummary').value;
+            const image = document.getElementById('newArticleImage').value;
             if (title && summary) {
-                addArticle(title, summary);
+                addArticle(title, summary, image);
             } else {
                 alert('記事タイトルと概要を入力してください。');
             }
@@ -1388,7 +1360,8 @@
         // 記事詳細モーダルロジック
         const articleModal = document.getElementById('articleModal');
         const modalTitle = document.getElementById('modalTitle');
-        const modalSummary = document.getElementById('modalSummary');
+        const modalBody = document.getElementById('modalBody');
+        const modalImage = document.getElementById('modalImage');
         const closeArticleModalBtn = document.getElementById('closeArticleModalBtn');
         const closeArticleModalBtnBottom = document.getElementById('closeArticleModalBtnBottom');
         
@@ -1397,17 +1370,40 @@
                 e.preventDefault();
                 const title = e.target.dataset.title;
                 const summary = e.target.dataset.summary;
-                
+                const image = e.target.dataset.image;
+
                 modalTitle.textContent = title;
-                modalSummary.innerHTML = `
+                modalBody.innerHTML = `
                     <p class="text-base font-semibold mb-4 text-primary-blue">記事概要:</p>
                     <p>${summary}</p>
-                    <div class="mt-6 text-center text-gray-500">
-                        <p>--- ここから先は、より詳細な記事コンテンツが続きます ---</p>
-                        <p>この先は、記事の全文、図表、参考文献などが表示されるエリアです。</p>
-                        <p>現在、コンテンツは準備中です。今しばらくお待ちください。</p>
+                    <div class="mt-6">
+                        <h4 class="text-xl font-bold text-primary-blue mb-2">詳細コンテンツ</h4>
+                        <p class="text-sm leading-relaxed">
+                            当サイトでは、記事の詳細コンテンツを随時追加しています。
+                            以下は、この記事に関するより専門的な内容の一部です。
+                        </p>
+                        <ul class="list-disc list-inside mt-4 text-sm leading-relaxed text-dark-gray-text">
+                            <li>最新の研究動向と臨床応用への展望</li>
+                            <li>関連法規やガイドラインの変更点</li>
+                            <li>現場での具体的な実践事例と課題</li>
+                            <li>専門家によるQ&Aセッション</li>
+                            <li>将来的な医療技術の進化予測</li>
+                        </ul>
+                        <div class="mt-6 text-center text-gray-500">
+                            <p>--- ここまでが詳細コンテンツのプレビューです ---</p>
+                        </div>
+                    </div>
+                    <div class="author-info">
+                        <p>執筆者：MedReach編集部</p>
                     </div>
                 `;
+                if (image) {
+                    modalImage.src = image;
+                    modalImage.classList.remove('hidden');
+                } else {
+                    modalImage.classList.add('hidden');
+                }
+
                 articleModal.classList.add('active');
             }
         });
@@ -1504,7 +1500,7 @@
                 '業務内容': '弊社の主な業務内容は、医師向け医療情報の提供、転職・開業支援、経営コンサルティングです。',
                 'プライバシーポリシー': 'プライバシーポリシーは、フッターのリンクからご確認いただけます。お客様の個人情報の保護を最重要課題としております。',
                 '利用規約': '利用規約は、フッターのリンクからご確認いただけます。本サイトのご利用前に必ずご確認ください。',
-                'サービス内容': '弊社のサービスは、記事アーカイブ、求人情報、クリニック譲渡、ドクターズブログ、厚生労働省リンク集など、医師の皆様の多岐にわたるニーズに対応しています。',
+                'サービス内容': '弊社のサービスは、ブログ、求人情報、クリニック譲渡、厚生労働省リンク集など、医師の皆様の多岐にわたるニーズに対応しています。',
                 '設立': '設立年月日についてですね。こちらはサイト運営の都合上、非公開とさせていただいております。',
                 '事業規模': '事業規模についてですね。弊社は医療業界に特化した少数精鋭のチームで、先生方一人ひとりに寄り添ったサービスを提供しております。',
                 '企業理念': '弊社の企業理念は、「医師の専門性とキャリアを力強くサポートし、より良い医療の未来を創造する」ことです。',
@@ -1518,12 +1514,12 @@
                 'メディア掲載': 'メディア掲載実績についてですね。こちらは個別にお問い合わせください。',
                 
                 // 記事・情報に関する質問 (61-80)
-                '記事': '記事・情報に関するご質問ですね。本サイトの「記事アーカイブ」タブにて、2019年以降の過去記事を閲覧いただけます。特定のテーマやキーワードでの検索は、今後実装予定です。',
+                '記事': '記事・情報に関するご質問ですね。本サイトの「ドクターズブログ」で記事をご覧いただけます。特定のテーマやキーワードでの検索は、今後実装予定です。',
                 '情報': '医療情報に関するご質問ですね。当サイトでは、最新の医療トレンドや国が発表する重要な情報を分かりやすくまとめています。',
-                'ニュース': '医療ニュースに関するご質問ですね。当サイトの「記事アーカイブ」や「ドクターズブログ」では、最新の医療ニュースを専門的な視点で解説しています。',
-                '記事の探し方': '記事の探し方についてですね。現在はアーカイブページで年別・月別に記事をご覧いただけます。キーワード検索機能は今後実装予定です。',
-                '古い記事': '古い記事もすべて「記事アーカイブ」に保存されています。2019年からの記事をすべてご覧いただけます。',
-                '新しい記事': '新しい記事は毎月3本程度公開しています。サイトのトップページでお知らせします。',
+                'ニュース': '医療ニュースに関するご質問ですね。当サイトの「ドクターズブログ」では、最新の医療ニュースを専門的な視点で解説しています。',
+                '記事の探し方': '記事の探し方についてですね。ブログページでは最新の記事をご覧いただけます。過去記事は管理者パネルから追加・編集可能です。',
+                '古い記事': '古い記事も管理者パネルに保存されています。',
+                '新しい記事': '新しい記事は管理者パネルから追加され、ブログに表示されます。',
                 '記事のテーマ': '記事のテーマは、働き方改革、AI医療、地域医療、メンタルヘルスなど多岐にわたります。先生方の関心が高いトピックを厳選しています。',
                 '記事の投稿者': '記事は、現役医師や医療業界の専門家が執筆しています。専門的で信頼性の高い情報を提供できるよう努めています。',
                 '外部サイト': '記事内に外部サイトへのリンクが多数ございます。信頼できる情報源へのアクセスをサポートするためです。',
