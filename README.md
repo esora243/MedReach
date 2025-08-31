@@ -558,7 +558,10 @@
     <!-- ヘッダー -->
     <div class="header-bg text-white py-6 md:py-8 shadow-lg">
         <div class="container flex flex-col md:flex-row items-center justify-between relative z-10">
-            <h1 class="text-3xl md:text-4xl font-extrabold mb-4 md:mb-0">MedReach</h1>
+            <a href="#" class="flex items-center gap-2 mb-4 md:mb-0 text-3xl md:text-4xl font-extrabold text-white no-underline">
+                <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                MedReach
+            </a>
             <nav>
                 <ul class="flex flex-wrap justify-center space-x-4 md:space-x-8 text-lg md:text-xl font-semibold">
                     <li><a href="#home" class="nav-link active">
