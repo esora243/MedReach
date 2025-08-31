@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -1130,9 +1129,9 @@
                 const articleRef = doc(db, ARTICLES_COLLECTION_PATH, id);
                 await deleteDoc(articleRef);
                 console.log("記事が正常に削除されました。");
-            } catch (error) {
+            } catch (error) => {
                 console.error("記事の削除エラー:", error);
-            }
+            });
         }
 
         // --- UIレンダリング関数 ---
