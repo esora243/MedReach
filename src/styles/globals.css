@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  background-color: #f9fafb;
+  color: #4b5563;
+}
+
+.button-primary {
+  @apply bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-2 px-6 rounded-lg shadow hover:from-blue-700 hover:to-blue-900 transition;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-md p-6 mb-6;
+}
+
+.section-title {
+  @apply text-3xl font-extrabold text-primary-blue text-center my-8;
+}
+
+/* ...さらに細かいカスタムスタイルは適宜追加... */

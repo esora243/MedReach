@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>MedReach | 医師・医療従事者のための総合情報サイト</title>
+  <link href="style.css" rel="stylesheet" />
+  <script defer src="main.js"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- ヘッダー -->
+  <header class="header-bg sticky top-0 z-50 shadow-lg">
+    <div class="container flex justify-between items-center py-4">
+      <a href="/" class="flex items-center gap-3 text-2xl font-bold text-white">
+        <img src="assets/icons/logo.svg" alt="MedReach" class="h-10 w-10"/>
+        MedReach
+      </a>
+      <nav>
+        <ul class="flex gap-8 text-lg">
+          <li><a href="#home" class="nav-link active">ホーム</a></li>
+          <li><a href="#blog" class="nav-link">ブログ</a></li>
+          <li><a href="#job-postings" class="nav-link">求人</a></li>
+          <li><a href="#clinic-transfer" class="nav-link">クリニック譲渡</a></li>
+          <li><a href="#company-info" class="nav-link">企業情報</a></li>
+          <li><a href="#mhlw-links" class="nav-link">厚生労働省</a></li>
+        </ul>
+      </nav>
+      <div>
+        <button id="adminLoginBtn" class="btn-admin">管理者ログイン</button>
+        <button id="adminPanelBtn" class="btn-admin hidden">管理者パネル</button>
+      </div>
+    </div>
+  </header>
+  <!-- メイン -->
+  <main class="container mx-auto py-8">
+    <section id="home" class="content-section active">
+      <!-- ... -->
+    </section>
+    <section id="blog" class="content-section">
+      <h2 class="section-title">ドクターズブログ</h2>
+      <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 記事カードをJavaScriptで動的描画 -->
+      </div>
+    </section>
+    <!-- ... 他セクション多数 ... -->
+    <section id="mhlw-links" class="content-section">
+      <!-- 厚生労働省リンクカード群 -->
+    </section>
+  </main>
+  <!-- フッター -->
+  <footer class="footer-bg text-white py-8">
+    <div class="container text-center">
+      <p>&copy; 2025 MedReach. All rights reserved.</p>
+      <p class="text-gray-400 mt-2">医師の専門性とキャリアをサポートするプラットフォーム</p>
+    </div>
+  </footer>
+  <!-- チャットボットなど -->
+  <div id="chatbot-toggle-btn">...</div>
+  <div id="chatbot-container" class="hidden">...</div>
+  <!-- 管理者モーダルなど -->
+  <div id="adminLoginModal" class="hidden">...</div>
+</body>
+</html>
