@@ -355,7 +355,7 @@
         <!-- ホームセクション -->
         <section id="home" class="content-section active mb-12 md:mb-16 bg-white p-8 rounded-xl shadow-lg text-center">
             <h2 class="section-title">ドクターリーチ：医師の知的好奇心とキャリアの次なる一歩を繋ぐ</h2>
-            <img src="https://placehold.co/800x450/1e3a8a/ffffff?text=画像(1).jpg" alt="[医療研究のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src=画像 (1).jpg>
             <p class="text-xl text-dark-gray-text max-w-3xl mx-auto leading-relaxed mb-6">
                 先生方の「知りたい」に真摯に寄り添い、日々の診療に役立つ専門記事、キャリアの選択肢を広げる求人・譲渡情報、そして国の重要な公式発表まで、必要な情報を迷いなく手に入れられるよう、本プラットフォームは設計されております。
             </p>
