@@ -242,6 +242,12 @@
             stroke-linejoin: round;
             flex-shrink: 0;
         }
+        
+        /* 記事詳細ページのアイコン調整 */
+        .article-modal-content .icon-medium {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
 
         /* 画像のスタイル */
         .feature-image {
@@ -252,7 +258,11 @@
             margin-bottom: 2.5rem;
             object-fit: cover;
         }
-
+        .mhlw-category-card .feature-image {
+            box-shadow: none;
+            border-radius: 0.75rem;
+        }
+        
         /* 厚生労働省リンクのカードスタイル */
         .mhlw-category-card {
             display: flex;
@@ -526,6 +536,21 @@
             margin-top: 1rem;
             border-top: 1px solid var(--medium-gray);
             padding-top: 1rem;
+        }
+        /* ブログの折りたたみアイコンのスタイル調整 */
+        .year-header, .month-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .year-header svg, .month-header svg {
+            transition: transform 0.3s ease-in-out;
+        }
+        .year-header.collapsed svg, .month-header.collapsed svg {
+            transform: rotate(0deg);
+        }
+        .year-header.expanded svg, .month-header.expanded svg {
+            transform: rotate(90deg);
         }
     </style>
 </head>
@@ -1115,7 +1140,7 @@
                 return;
             }
         
-            blogGrid.innerHTML = ''; // コンテンツをクリア
+            blogGrid.innerHTML = '';
 
             const articlesByYearMonth = {};
             currentArticles.forEach(article => {
@@ -1133,12 +1158,12 @@
                 yearBlock.className = 'bg-white rounded-xl shadow-lg p-6 mb-8';
                 
                 const yearHeader = document.createElement('h3');
-                yearHeader.className = 'text-2xl font-bold text-primary-blue cursor-pointer flex items-center gap-2 mb-4';
-                yearHeader.innerHTML = `<svg class="icon-medium transform transition-transform duration-300 -rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg><span>${year}年</span>`;
+                yearHeader.className = 'text-2xl font-bold text-primary-blue year-header collapsed flex items-center gap-2 mb-4 cursor-pointer';
+                yearHeader.innerHTML = `<svg class="icon-medium transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg><span>${year}年</span>`;
                 yearBlock.appendChild(yearHeader);
                 
                 const monthsContainer = document.createElement('div');
-                monthsContainer.className = 'months-container space-y-4';
+                monthsContainer.className = 'months-container space-y-4 hidden';
                 
                 const sortedMonths = Object.keys(articlesByYearMonth[year]).sort((a, b) => b - a);
                 sortedMonths.forEach(month => {
@@ -1146,12 +1171,12 @@
                     monthBlock.className = 'bg-gray-50 rounded-lg shadow-sm p-4';
                     
                     const monthHeader = document.createElement('h4');
-                    monthHeader.className = 'text-xl font-semibold text-secondary-blue cursor-pointer flex items-center gap-2 mb-4';
-                    monthHeader.innerHTML = `<svg class="icon-small transform transition-transform duration-300 -rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg><span>${parseInt(month) + 1}月</span>`;
+                    monthHeader.className = 'text-xl font-semibold text-secondary-blue month-header collapsed flex items-center gap-2 mb-4 cursor-pointer';
+                    monthHeader.innerHTML = `<svg class="icon-small transform transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg><span>${parseInt(month) + 1}月</span>`;
                     monthBlock.appendChild(monthHeader);
                     
                     const articlesContainer = document.createElement('div');
-                    articlesContainer.className = 'articles-container space-y-4';
+                    articlesContainer.className = 'articles-container space-y-4 hidden';
 
                     articlesByYearMonth[year][month].forEach(article => {
                         const articleElement = document.createElement('div');
@@ -1160,7 +1185,7 @@
                             <h3 class="text-xl font-semibold mb-3 text-dark-gray-text">${article.title}</h3>
                             <p class="text-medium-gray-text mb-4 text-sm">${article.summary}</p>
                             ${article.image ? `<img src="${article.image}" alt="[ブログ記事のイメージ]" class="w-full h-auto rounded-lg mb-4">` : ''}
-                            <a href="#" class="button-primary inline-block text-center read-more-link" data-title="${article.title}" data-summary="${article.summary}">
+                            <a href="#" class="button-primary inline-block text-center read-more-link" data-title="${article.title}" data-summary="${article.summary}" data-image="${article.image}">
                                 <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                                 続きを読む
                             </a>
@@ -1174,7 +1199,8 @@
                     monthHeader.addEventListener('click', () => {
                         const icon = monthHeader.querySelector('svg');
                         articlesContainer.classList.toggle('hidden');
-                        icon.classList.toggle('-rotate-90');
+                        monthHeader.classList.toggle('collapsed');
+                        monthHeader.classList.toggle('expanded');
                     });
                 });
                 
@@ -1184,10 +1210,12 @@
                 yearHeader.addEventListener('click', () => {
                     const icon = yearHeader.querySelector('svg');
                     monthsContainer.classList.toggle('hidden');
-                    icon.classList.toggle('-rotate-90');
+                    yearHeader.classList.toggle('collapsed');
+                    yearHeader.classList.toggle('expanded');
                 });
             });
         }
+
 
         // --- 管理者パネルUI ---
         function renderAdminArticleList() {
