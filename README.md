@@ -53,7 +53,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('画像 (1).jpg');
+            background-image: url('画像(1).jpg');
             background-size: 200px;
             background-position: center;
             background-repeat: no-repeat;
@@ -71,7 +71,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('画像 (2).jpg');
+            background-image: url('画像(2).jpg');
             background-size: 200px;
             background-position: center;
             background-repeat: no-repeat;
@@ -282,6 +282,99 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Chatbot Styles */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            max-width: 90%;
+            height: 500px;
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        }
+        #chatbot-container.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #chatbot-header {
+            background-image: linear-gradient(to right, var(--header-gradient-start), var(--header-gradient-end));
+            color: white;
+            padding: 1rem 1.5rem;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #chatbot-messages {
+            flex-grow: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        .chatbot-message {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .chatbot-message.bot .message-bubble {
+            background-color: var(--medium-gray);
+            border-radius: 1.25rem 1.25rem 1.25rem 0;
+            padding: 0.75rem 1rem;
+            color: var(--dark-gray-text);
+        }
+        .chatbot-message.user {
+            justify-content: flex-end;
+        }
+        .chatbot-message.user .message-bubble {
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 1.25rem 1.25rem 0 1.25rem;
+            padding: 0.75rem 1rem;
+        }
+        #chatbot-input-container {
+            padding: 1rem 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        #chatbot-input {
+            flex-grow: 1;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+        #chatbot-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: linear-gradient(to right, #60a5fa, #3b82f6);
+            color: white;
+            border-radius: 9999px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+        #chatbot-toggle-btn:hover {
+            transform: scale(1.1);
+        }
+
         /* Admin Panel Specific Styles */
         .admin-panel-overlay {
             position: fixed;
@@ -373,6 +466,10 @@
                         <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M16 16h-2"/></svg>
                         ドクターズブログ
                     </a></li>
+                    <li><a href="#company-info" class="nav-link">
+                        <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2"><path d="M6 8a6 6 0 0 1 6-6v7H6v11"/><path d="M22 2v11a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V2"/><path d="M16 21v-4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4"/></svg>
+                        企業情報
+                    </a></li>
                     <li><a href="#mhlw-links" class="nav-link">
                         <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3.5-3.5a4 4 0 0 0-6.74-6.74l1.24-1.24a7.5 7.5 0 0 1-.12 10.62ZM14 11a5 5 0 0 0-7.54-.54l-3.5 3.5a4 4 0 0 0 6.74 6.74l-1.24 1.24a7.5 7.5 0 0 1 .12-10.62Z"/></svg>
                         厚生労働省
@@ -388,12 +485,12 @@
         <!-- ホームセクション -->
         <section id="home" class="content-section active mb-12 md:mb-16 bg-white p-8 rounded-xl shadow-lg text-center">
             <h2 class="section-title">MedReach：医師の知的好奇心とキャリアの次なる一歩を繋ぐ</h2>
-            <img src="画像 (3).jpg" alt="[医療研究のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(3).jpg" alt="[医療研究のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-xl text-dark-gray-text max-w-3xl mx-auto leading-relaxed mb-6">
                 先生方の「知りたい」に真摯に寄り添い、日々の診療に役立つ専門記事、キャリアの選択肢を広げる求人・譲渡情報、そして国の重要な公式発表まで、必要な情報を迷いなく手に入れられるよう、本プラットフォームは設計されております。
             </p>
             <p class="text-lg text-medium-gray-text max-w-3xl mx-auto leading-relaxed">
-                2019年以来、先生方の専門知識とキャリアを後押ししています。
+                2019年以来、毎月3本の厳選記事で、先生方の専門知識とキャリアを力強く後押ししています。
             </p>
             <div class="text-center mt-10">
                 <a href="#article-history" class="button-primary page-link">
@@ -406,7 +503,7 @@
         <!-- 記事・情報履歴セクション -->
         <section id="article-history" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">記事アーカイブ：2019年からの医療トレンドを深掘り</h2>
-            <img src="画像 (4).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(4).jpg" alt="[医療記事のアーカイブイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 2019年より毎月3本、医療界の重要な動きを捉えた記事を公開しています。各年の主要テーマと記事概要で、最新トレンドを効率的にキャッチしてください。
             </p>
@@ -415,10 +512,24 @@
             </div>
         </section>
 
+        <!-- 記事詳細表示用モーダル -->
+        <div id="articleModal" class="admin-panel-overlay">
+            <div class="admin-panel-content max-w-2xl text-left">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modalTitle" class="text-2xl font-bold text-primary-blue">記事タイトル</h3>
+                    <button id="closeArticleModalBtn" class="text-gray-500 hover:text-gray-900 text-3xl">&times;</button>
+                </div>
+                <p id="modalSummary" class="text-base text-dark-gray-text leading-relaxed"></p>
+                <div class="mt-8 flex justify-end">
+                    <button id="closeArticleModalBtnBottom" class="admin-button delete">閉じる</button>
+                </div>
+            </div>
+        </div>
+
         <!-- 求人情報セクション -->
         <section id="job-postings" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">求人情報：あなたの専門性を活かす次なるステージへ</h2>
-            <img src="画像 (5).jpg" alt="[求職活動のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(5).jpg" alt="[求職活動のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 専門分野や働き方のニーズに応える、医師向けの厳選求人情報です。ビズリーチやマイナビドクターのような質の高い情報提供を目指し、先生方の理想の職場探しをMedReachがサポートします。
             </p>
@@ -433,7 +544,7 @@
                         <li>年収: 1,500万円〜2,500万円</li>
                         <li>待遇: 住宅手当、学会参加費補助、週休2日制</li>
                     </ul>
-                    <img src="画像 (6).jpg" alt="[都内総合病院のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(6).jpg" alt="[都内総合病院のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://doctor.mynavi.jp/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -449,7 +560,7 @@
                         <li>年収: 1,800万円〜3,000万円</li>
                         <li>待遇: 車通勤可、退職金制度あり、開業支援制度</li>
                     </ul>
-                    <img src="画像 (7).jpg" alt="[地方クリニックのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(7).jpg" alt="[地方クリニックのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.bizreach.jp/career-change/medical/doctor/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -465,7 +576,7 @@
                         <li>年収: 1,200万円〜1,800万円</li>
                         <li>待遇: 完全週休二日制、福利厚生充実、研修制度</li>
                     </ul>
-                    <img src="画像 (8).jpg" alt="[大手企業のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(8).jpg" alt="[大手企業のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.dr-summit.jp/column/industrial_physician/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -481,7 +592,7 @@
                         <li>時給: 10,000円〜15,000円</li>
                         <li>待遇: 交通費支給、扶養内勤務応相談、午前のみ勤務可</li>
                     </ul>
-                    <img src="画像 (9).jpg" alt="[健診センターのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(9).jpg" alt="[健診センターのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.m3.com/doctor/job/parttime/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -499,7 +610,7 @@
         <!-- クリニック譲渡情報セクション -->
         <section id="clinic-transfer" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">クリニック譲渡：理想の医療を叶える、新たな開業の選択肢</h2>
-            <img src="画像 (10).jpg" alt="[クリニック譲渡のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(10).jpg" alt="[クリニック譲渡のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 開業を検討中の先生方、新たな挑戦をお考えの方へ。質の高いクリニック譲渡案件を厳選し、スムーズな事業承継を支援します。
             </p>
@@ -515,7 +626,7 @@
                         <li>譲渡価格: 5,000万円</li>
                         <li>特記事項: 既存患者基盤あり、スタッフ引き継ぎ可</li>
                     </ul>
-                    <img src="画像 (11).jpg" alt="[世田谷区のクリニック外観]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(11).jpg" alt="[世田谷区のクリニック外観]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.medius.co.jp/transfer/clinic/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -532,7 +643,7 @@
                         <li>譲渡価格: 7,500万円</li>
                         <li>特記事項: 最新のレーザー治療器導入済、駅直結</li>
                     </ul>
-                    <img src="画像 (12).jpg" alt="[吹田市の眼科クリニック]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(12).jpg" alt="[吹田市の眼科クリニック]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.japan-med.co.jp/clinic-transfer/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -549,7 +660,7 @@
                         <li>譲渡価格: 9,000万円</li>
                         <li>特記事項: 美容機器一式、集客ノウハウ提供、駅近</li>
                     </ul>
-                    <img src="画像 (13).jpg" alt="[名古屋市の美容皮膚科]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(13).jpg" alt="[名古屋市の美容皮膚科]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.iryokai.co.jp/consulting/transfer/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -566,7 +677,7 @@
                         <li>譲渡価格: 6,000万円</li>
                         <li>特記事項: 理学療法士常勤、駐車場完備</li>
                     </ul>
-                    <img src="画像 (14).jpg" alt="[福岡市の整形外科]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(14).jpg" alt="[福岡市の整形外科]" class="w-full h-auto rounded-lg mb-4">
                     <a href="https://www.dr-summit.jp/column/clinic_transfer/" target="_blank" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                         詳細を見る
@@ -584,7 +695,7 @@
         <!-- ブログセクション -->
         <section id="blog" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">ドクターズブログ：現場の知見と未来への提言</h2>
-            <img src="画像 (15).jpg" alt="[医療ブログのイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <img src="画像(15).jpg" alt="[医療ブログのイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 現役医師や医療専門家が執筆するコラム・解説記事です。日々の診療のヒントからキャリア、最新医療トレンドまで、多岐にわたるテーマを深く掘り下げます。
             </p>
@@ -605,7 +716,7 @@
                     <p class="text-medium-gray-text mb-4 text-sm">
                         診断支援から新薬開発まで、急速に進化するAI医療。その可能性と課題、医師に求められる役割について深く考察します。
                     </p>
-                    <img src="画像 (17).jpg" alt="[AI医療のイラスト]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(17).jpg" alt="[AI医療のイラスト]" class="w-full h-auto rounded-lg mb-4">
                     <a href="#" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         続きを読む
@@ -616,7 +727,7 @@
                     <p class="text-medium-gray-text mb-4 text-sm">
                         多忙な医療現場で働く医師のメンタルヘルスは非常に重要です。ストレス管理、リフレッシュ法、専門機関の活用についてご紹介します。
                     </p>
-                    <img src="画像 (18).jpg" alt="[メンタルヘルスケアのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(18).jpg" alt="[メンタルヘルスケアのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <a href="#" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         続きを読む
@@ -627,7 +738,7 @@
                     <p class="text-medium-gray-text mb-4 text-sm">
                         過疎地域での医療提供は多くの困難を伴いますが、その中で見つけるやりがいや、地域住民との深い繋がりについて探ります。
                     </p>
-                    <img src="画像 (19).jpg" alt="[地域医療の様子]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(19).jpg" alt="[地域医療の様子]" class="w-full h-auto rounded-lg mb-4">
                     <a href="#" class="button-primary inline-block text-center">
                         <svg class="icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         続きを読む
@@ -642,9 +753,60 @@
             </div>
         </section>
 
+        <!-- 企業情報セクション -->
+        <section id="company-info" class="content-section mb-12 md:mb-16">
+            <h2 class="section-title">企業情報：クレアメディカル株式会社</h2>
+            <img src="画像(25).jpg" alt="[オフィスビルのイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-semibold text-primary-blue mb-4">企業概要</h3>
+                    <p class="text-medium-gray-text text-sm leading-relaxed">
+                        クレアメディカル株式会社は、医療従事者の皆様の専門性とキャリア形成をサポートするため、医療情報の提供、転職・開業支援、そして経営コンサルティングを主軸としたサービスを展開しています。変化の激しい医療業界において、常に最先端の情報と最適なソリューションを提供し、医師の皆様がより良い環境で活躍できる社会の実現に貢献します。
+                    </p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-primary-blue mb-4">代表者情報</h3>
+                    <p class="text-medium-gray-text text-sm">
+                        代表取締役社長：<span class="font-bold">伏見 勇紀</span><br>
+                        メールアドレス：<span class="text-secondary-blue font-semibold">creamed@yh.med</span>
+                    </p>
+                </div>
+                <div class="card p-6 col-span-1 md:col-span-3">
+                    <h3 class="text-xl font-semibold text-primary-blue mb-4">所在地・アクセスマップ</h3>
+                    <p class="text-medium-gray-text text-sm mb-4">
+                        〒105-0012<br>
+                        東京都港区芝大門２丁目３−１８ 大門ビル<br>
+                        <a href="https://maps.app.goo.gl/abcdefg" target="_blank" class="text-secondary-blue hover:text-primary-blue transition-colors duration-200">[Google Mapsで見る]</a>
+                    </p>
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg shadow-inner">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.5284059085237!2d139.75486517617904!3d35.66318533816654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b90a6e0d9b7%3A0x86e680a6c026e4e0!2z44CSMTA1LTAwMTIg5p2x5Lqs6YO95b-o55Sw5Yy66Iil5aSn5Zmo77yS77yS5LiJ77yS5LiK44Oh44Kj44Ki44Kv44OP44Oz44K_44Or44Kv44O8!5e0!3m2!1sja!2sjp!4v1692224424368!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-primary-blue mb-4">プライバシーポリシー</h3>
+                    <p class="text-medium-gray-text text-sm">
+                        お客様の個人情報の保護を最重要課題と位置づけ、厳格な管理体制のもと、法令に基づいた適切な取り扱いを徹底しております。
+                    </p>
+                    <div class="text-right mt-4">
+                        <a href="#" class="text-secondary-blue hover:text-primary-blue transition-colors duration-200 text-sm font-semibold">詳細を見る</a>
+                    </div>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-primary-blue mb-4">利用規約</h3>
+                    <p class="text-medium-gray-text text-sm">
+                        本プラットフォームをご利用いただく上での規約です。当サービスを利用される前に必ずご確認ください。
+                    </p>
+                    <div class="text-right mt-4">
+                        <a href="#" class="text-secondary-blue hover:text-primary-blue transition-colors duration-200 text-sm font-semibold">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 厚生労働省リンクセクション -->
         <section id="mhlw-links" class="content-section mb-12 md:mb-16">
             <h2 class="section-title">厚生労働省：医師が知るべき制度・ガイドライン一覧</h2>
+            <img src="画像(26).jpg" alt="[厚生労働省のイメージ]" class="feature-image mx-auto my-8 max-w-4xl">
             <p class="text-md text-medium-gray-text text-center mb-10 max-w-3xl mx-auto">
                 医師の皆様に不可欠な厚生労働省の公式情報を、テーマ別に整理しました。必要な制度やガイドラインへ迷わずアクセスいただけます。
             </p>
@@ -652,7 +814,7 @@
                 <!-- カテゴリ1: 医師資格・免許・研修 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M22 10v6M2 10l10-5 10 5M2 10v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"/><path d="M6 10v6"/><path d="M18 10v6"/><path d="M12 2v3"/></svg>医師資格・免許・研修</h3>
-                    <img src="画像 (20).jpg" alt="[医師免許のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(20).jpg" alt="[医師免許のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>医師免許の取得・更新手続き、専門医制度、各種研修制度など、医師としてのキャリア形成に欠かせない情報です。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/ishimensetsu/index.html" target="_blank">医師免許関係情報</a></li>
@@ -663,7 +825,7 @@
                 <!-- カテゴリ2: 医療法規・倫理・安全 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale"><path d="m16 16 3-3V9l-3 3"/><path d="M21 16V9l-3 3"/><path d="M21 16H9a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h5"/><path d="M16 16H4a2 2 0 0 1-2-2V3a1 1 0 0 1 1-1h12a2 2 0 0 1 2 2v10"/></svg>医療法規・倫理・安全</h3>
-                    <img src="画像 (21).jpg" alt="[医療法規に関する文書のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(21).jpg" alt="[医療法規に関する文書のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>医療法、医師法、医療安全、医療倫理に関する最新の法令やガイドラインなど、診療の遵守事項を確認できます。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/hourei/index.html" target="_blank">医療法関係通知</a></li>
@@ -674,7 +836,7 @@
                 <!-- カテゴリ3: 診療報酬・医療制度 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-yen"><path d="M12 1v22"/><path d="M17 7H7M17 17H7"/></svg>診療報酬・医療制度</h3>
-                    <img src="gazou(1).jpg" alt="[診療報酬に関するグラフのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(22).jpg" alt="[診療報酬に関するグラフのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>診療報酬改定情報、保険制度、地域医療構想など、医療経営や国の医療政策に関わる重要な情報をご確認いただけます。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html" target="_blank">診療報酬改定について</a></li>
@@ -685,7 +847,7 @@
                 <!-- カテゴリ4: 感染症対策・公衆衛生 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-virus"><path d="M10 2c.5 0 1 .5 1 1v2"/><path d="M14 2c-.5 0-1 .5-1 1v2"/><path d="M15 13v-2c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v2"/><path d="M12 9v6"/><path d="M16 15v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2"/><path d="M11 22c.5 0 1-.5 1-1v-2"/><path d="M13 22c-.5 0-1-.5-1-1v-2"/><path d="M22 12h-2c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h2"/><path d="M20 16c0 1.1.9 2 2 2h2"/><path d="M2 12h2c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H2"/><path d="M4 8c0-1.1-.9-2-2-2H0"/></svg>感染症対策・公衆衛生</h3>
-                    <img src="gazou(2).jpg" alt="[感染症対策のイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(23).jpg" alt="[感染症対策のイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>新型コロナウイルス感染症をはじめとする各種感染症の情報、予防接種、公衆衛生関連の最新動向を把握できます。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou04/index.html" target="_blank">感染症情報全般</a></li>
@@ -696,7 +858,7 @@
                 <!-- カテゴリ5: 働き方改革・労働環境 -->
                 <div class="card mhlw-category-card">
                     <h3 class="mb-4"><svg class="icon-large text-secondary-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-cog"><circle cx="12" cy="7" r="4"/><path d="M12 15v2"/><path d="M16 19h-8"/><path d="M17.6 17.6a2 2 0 0 0-2.8 0l-1.4 1.4a2 2 0 0 0 0 2.8l1.4 1.4a2 2 0 0 0 2.8 0l1.4-1.4a2 2 0 0 0 0-2.8z"/><path d="M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>働き方改革・労働環境</h3>
-                    <img src="gazou(24).jpg" alt="[ワークライフバランスのイメージ]" class="w-full h-auto rounded-lg mb-4">
+                    <img src="画像(24).jpg" alt="[ワークライフバランスのイメージ]" class="w-full h-auto rounded-lg mb-4">
                     <p>医師の労働時間短縮、タスクシフト、女性医師支援など、より良い労働環境を実現するための国の取り組みをご紹介します。</p>
                     <ul>
                         <li><svg class="icon-small text-accent-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/ishihou/index.html" target="_blank">医師の働き方改革</a></li>
@@ -721,6 +883,41 @@
             </div>
         </div>
     </footer>
+
+    <!-- Chatbot Toggle Button -->
+    <div id="chatbot-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9.3 9.3 0 0 1 4 16.1L2 22l6-2Z"/><path d="M10.5 4A9.45 9.45 0 0 1 20 12.5a9.38 9.38 0 0 1-1.2 4.4L22 22l-6-2a9.43 9.43 0 0 1-5.5-1.5"/></svg>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <h4 class="font-bold">MedReachサポート</h4>
+            <button id="close-chatbot-btn" class="text-white text-3xl font-bold leading-none">&times;</button>
+        </div>
+        <div id="chatbot-messages">
+            <!-- Chat messages will be dynamically added here -->
+            <div class="chatbot-message bot">
+                <span class="message-bubble">こんにちは！ご質問があれば、以下から選択いただくか、入力してください。</span>
+            </div>
+            <div class="chatbot-message bot mt-2">
+                <div class="flex flex-col space-y-2">
+                    <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">求人情報について</button>
+                    <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">クリニック譲渡について</button>
+                    <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">企業情報について</button>
+                    <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">記事・情報について</button>
+                    <button class="chatbot-quick-reply-btn bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-colors">パスワードを忘れた</button>
+                </div>
+            </div>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="質問を入力してください..." class="flex-grow">
+            <button id="chatbot-send-btn" class="bg-primary-blue text-white p-2 rounded-full shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-horizonal"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M21 12H6"/></svg>
+            </button>
+        </div>
+    </div>
+
 
     <!-- Admin Login Modal -->
     <div id="adminLoginModal" class="admin-panel-overlay">
@@ -811,7 +1008,7 @@
         }
 
         // --- Article Data Management (Firestore) ---
-        const ARTICLES_COLLECTION_PATH = `/artifacts/${appId}/public/data/doctor_reach_articles`;
+        const ARTICLES_COLLECTION_PATH = `/artifacts/${appId}/public/data/medreach_articles`;
 
         let currentArticles = []; // Store articles fetched from Firestore
 
@@ -918,7 +1115,7 @@
                             <ul class="space-y-4">
                                 ${displayArticles.map(article => `
                                     <li class="article-item">
-                                        <a href="#" class="text-dark-gray-text hover:text-secondary-blue font-bold">${article.title}</a>
+                                        <a href="#" class="read-more-link text-dark-gray-text hover:text-secondary-blue font-bold" data-title="${article.title}" data-summary="${article.summary}">${article.title}</a>
                                         <p class="article-summary">${article.summary}</p>
                                     </li>
                                 `).join('')}
