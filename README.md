@@ -558,7 +558,7 @@
     <!-- ヘッダー -->
     <div class="header-bg text-white py-6 md:py-8 shadow-lg">
         <div class="container flex flex-col md:flex-row items-center justify-between relative z-10">
-            <a href="#" class="flex items-center gap-2 mb-4 md:mb-0 text-3xl md:text-4xl font-extrabold text-white no-underline">
+            <a href="#home" class="flex items-center gap-2 mb-4 md:mb-0 text-3xl md:text-4xl font-extrabold text-white no-underline">
                 <svg class="icon-medium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 MedReach
             </a>
@@ -1130,9 +1130,9 @@
                 const articleRef = doc(db, ARTICLES_COLLECTION_PATH, id);
                 await deleteDoc(articleRef);
                 console.log("記事が正常に削除されました。");
-            } catch (error) => {
+            } catch (error) {
                 console.error("記事の削除エラー:", error);
-            });
+            }
         }
 
         // --- UIレンダリング関数 ---
@@ -1641,15 +1641,17 @@
                 homeNavLink.classList.add('active');
             }
 
-            document.querySelectorAll('.content-section a[href^="#"]').forEach(anchor => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
